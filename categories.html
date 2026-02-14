@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories - Hot Wheels Collection</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        racing: {
+                            red: '#D91E18',
+                            orange: '#F96900',
+                            black: '#111111',
+                            dark: '#0a0a0a',
+                            gray: '#1f1f1f'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Roboto', 'sans-serif'],
+                        display: ['Racing Sans One', 'cursive']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="bg-racing-dark text-white font-sans antialiased">
+
+    <!-- Navbar -->
+    <nav
+        class="fixed w-full z-50 transition-all duration-300 py-4 bg-racing-black/90 backdrop-blur-md border-b border-white/10">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <i class="fa-solid fa-fire text-racing-orange text-3xl group-hover:scale-110 transition-transform"></i>
+                <span class="font-display text-2xl tracking-wider text-white">HOT <span
+                        class="text-racing-orange">WHEELS</span></span>
+            </a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html"
+                    class="text-gray-300 hover:text-racing-orange font-medium transition-colors">Home</a>
+                <a href="categories.html" class="text-racing-orange font-medium transition-colors">Categories</a>
+                <a href="offroad.html"
+                    class="text-gray-300 hover:text-racing-orange font-medium transition-colors">Off-Road</a>
+                <a href="monster.html"
+                    class="text-gray-300 hover:text-racing-orange font-medium transition-colors">Monster</a>
+                <a href="premium.html"
+                    class="text-gray-300 hover:text-racing-orange font-medium transition-colors">Premium</a>
+                <a href="about.html"
+                    class="text-gray-300 hover:text-racing-orange font-medium transition-colors">About</a>
+                <a href="contact.html"
+                    class="text-gray-300 hover:text-racing-orange font-medium transition-colors">Contact</a>
+            </div>
+            <div class="flex items-center gap-6">
+                <div class="relative cursor-pointer group">
+                    <i
+                        class="fa-solid fa-cart-shopping text-xl text-white group-hover:text-racing-orange transition-colors"></i>
+                    <span id="cart-count"
+                        class="absolute -top-2 -right-3 bg-racing-red text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">0</span>
+                </div>
+                <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-racing-black border-t border-gray-800">
+            <a href="index.html" class="block py-3 px-6 hover:bg-racing-gray">Home</a>
+            <a href="categories.html" class="block py-3 px-6 hover:bg-racing-gray text-racing-orange">Categories</a>
+            <a href="offroad.html" class="block py-3 px-6 hover:bg-racing-gray">Off-Road</a>
+            <a href="monster.html" class="block py-3 px-6 hover:bg-racing-gray">Monster Trucks</a>
+            <a href="premium.html" class="block py-3 px-6 hover:bg-racing-gray">Premium</a>
+            <a href="about.html" class="block py-3 px-6 hover:bg-racing-gray">About</a>
+            <a href="contact.html" class="block py-3 px-6 hover:bg-racing-gray">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="pt-32 pb-12 bg-gradient-to-b from-racing-black to-racing-dark px-6">
+        <div class="container mx-auto text-center">
+            <h1 class="text-5xl md:text-6xl font-display text-white mb-4 animate-fade-in">COLLECTION <span
+                    class="text-racing-orange">CATEGORIES</span></h1>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto">Explore our wide range of die-cast masterpieces. Choose
+                your lane.</p>
+        </div>
+    </header>
+
+    <!-- Categories Grid -->
+    <section class="py-12 bg-racing-dark">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Category 1 -->
+                <div
+                    class="group relative rounded-xl overflow-hidden shadow-lg hover:shadow-racing-orange/40 transition-shadow duration-300 reveal-on-scroll">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=800&auto=format&fit=crop"
+                            alt="Off-Road"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="bg-gray-900 p-6 border-t border-gray-800 relative z-10">
+                        <h3 class="text-2xl font-display text-white mb-2">OFF-ROAD</h3>
+                        <p class="text-gray-400 mb-4 text-sm">Rugged vehicles built for dirt, mud, and glory.</p>
+                        <a href="offroad.html"
+                            class="inline-block px-6 py-2 bg-racing-orange text-white rounded-full font-bold text-sm hover:bg-racing-red transition-colors">VIEW
+                            MORE</a>
+                    </div>
+                </div>
+
+                <!-- Category 2 -->
+                <div
+                    class="group relative rounded-xl overflow-hidden shadow-lg hover:shadow-racing-orange/40 transition-shadow duration-300 reveal-on-scroll delay-100">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=800&auto=format&fit=crop"
+                            alt="Monster"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="bg-gray-900 p-6 border-t border-gray-800 relative z-10">
+                        <h3 class="text-2xl font-display text-white mb-2">MONSTER TRUCKS</h3>
+                        <p class="text-gray-400 mb-4 text-sm">Giant wheels and crushing power.</p>
+                        <a href="monster.html"
+                            class="inline-block px-6 py-2 bg-racing-orange text-white rounded-full font-bold text-sm hover:bg-racing-red transition-colors">VIEW
+                            MORE</a>
+                    </div>
+                </div>
+
+                <!-- Category 3 -->
+                <div
+                    class="group relative rounded-xl overflow-hidden shadow-lg hover:shadow-racing-orange/40 transition-shadow duration-300 reveal-on-scroll delay-200">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?q=80&w=800&auto=format&fit=crop"
+                            alt="Premium"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="bg-gray-900 p-6 border-t border-gray-800 relative z-10">
+                        <h3 class="text-2xl font-display text-white mb-2">PREMIUM SERIES</h3>
+                        <p class="text-gray-400 mb-4 text-sm">Detailed castings for the adult collector.</p>
+                        <a href="premium.html"
+                            class="inline-block px-6 py-2 bg-racing-orange text-white rounded-full font-bold text-sm hover:bg-racing-red transition-colors">VIEW
+                            MORE</a>
+                    </div>
+                </div>
+
+                <!-- Category 4 -->
+                <div
+                    class="group relative rounded-xl overflow-hidden shadow-lg hover:shadow-racing-orange/40 transition-shadow duration-300 reveal-on-scroll delay-300">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1608027735398-3330cb5a9e7a?q=80&w=800&auto=format&fit=crop"
+                            alt="Treasure Hunt"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="bg-gray-900 p-6 border-t border-gray-800 relative z-10">
+                        <h3 class="text-2xl font-display text-white mb-2">TREASURE HUNT</h3>
+                        <p class="text-gray-400 mb-4 text-sm">Rare finds hidden within standard cases.</p>
+                        <button
+                            class="inline-block px-6 py-2 border border-racing-orange text-racing-orange rounded-full font-bold text-sm hover:bg-racing-orange hover:text-white transition-colors">COMING
+                            SOON</button>
+                    </div>
+                </div>
+
+                <!-- Category 5 -->
+                <div
+                    class="group relative rounded-xl overflow-hidden shadow-lg hover:shadow-racing-orange/40 transition-shadow duration-300 reveal-on-scroll delay-400">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=800&auto=format&fit=crop"
+                            alt="Super Treasure"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="bg-gray-900 p-6 border-t border-gray-800 relative z-10">
+                        <h3 class="text-2xl font-display text-white mb-2">SUPER TREASURE</h3>
+                        <p class="text-gray-400 mb-4 text-sm">Spectraflame paint and Real Riders wheels.</p>
+                        <button
+                            class="inline-block px-6 py-2 border border-racing-orange text-racing-orange rounded-full font-bold text-sm hover:bg-racing-orange hover:text-white transition-colors">COMING
+                            SOON</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Reuse Footer -->
+    <footer class="bg-black border-t border-gray-900 py-12 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+                <div>
+                    <div class="flex items-center justify-center md:justify-start gap-2 mb-4">
+                        <i class="fa-solid fa-fire text-racing-orange text-2xl"></i>
+                        <span class="font-display text-2xl tracking-wider text-white">HOT <span
+                                class="text-racing-orange">WHEELS</span></span>
+                    </div>
+                    <p class="text-gray-400">The ultimate destination for die-cast collectors.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4 uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="index.html" class="hover:text-racing-orange transition-colors">Home</a></li>
+                        <li><a href="categories.html" class="hover:text-racing-orange transition-colors">Categories</a>
+                        </li>
+                        <li><a href="about.html" class="hover:text-racing-orange transition-colors">About</a></li>
+                        <li><a href="contact.html" class="hover:text-racing-orange transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4 uppercase tracking-wider">Connect</h4>
+                    <p class="text-gray-500 text-sm">&copy; 2024. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

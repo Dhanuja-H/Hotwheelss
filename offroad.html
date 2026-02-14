@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Off-Road Collection - Hot Wheels</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        racing: {
+                            red: '#D91E18',
+                            orange: '#F96900',
+                            black: '#111111',
+                            dark: '#0a0a0a',
+                            gray: '#1f1f1f'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Roboto', 'sans-serif'],
+                        display: ['Racing Sans One', 'cursive']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="bg-racing-dark text-white font-sans antialiased">
+    <!-- Navbar -->
+    <nav
+        class="fixed w-full z-50 transition-all duration-300 py-4 bg-racing-black/90 backdrop-blur-md border-b border-white/10">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <i class="fa-solid fa-fire text-racing-orange text-3xl group-hover:scale-110 transition-transform"></i>
+                <span class="font-display text-2xl tracking-wider text-white">HOT <span
+                        class="text-racing-orange">WHEELS</span></span>
+            </a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html"
+                    class="text-gray-300 hover:text-racing-orange font-medium transition-colors">Home</a>
+                <a href="categories.html"
+                    class="text-gray-300 hover:text-racing-orange font-medium transition-colors">Categories</a>
+                <a href="offroad.html" class="text-racing-orange font-medium transition-colors">Off-Road</a>
+                <a href="monster.html"
+                    class="text-gray-300 hover:text-racing-orange font-medium transition-colors">Monster</a>
+                <a href="premium.html"
+                    class="text-gray-300 hover:text-racing-orange font-medium transition-colors">Premium</a>
+                <a href="about.html"
+                    class="text-gray-300 hover:text-racing-orange font-medium transition-colors">About</a>
+                <a href="contact.html"
+                    class="text-gray-300 hover:text-racing-orange font-medium transition-colors">Contact</a>
+            </div>
+            <div class="flex items-center gap-6">
+                <div class="relative cursor-pointer group">
+                    <i
+                        class="fa-solid fa-cart-shopping text-xl text-white group-hover:text-racing-orange transition-colors"></i>
+                    <span id="cart-count"
+                        class="absolute -top-2 -right-3 bg-racing-red text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">0</span>
+                </div>
+                <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-racing-black border-t border-gray-800">
+            <a href="index.html" class="block py-3 px-6 hover:bg-racing-gray">Home</a>
+            <a href="categories.html" class="block py-3 px-6 hover:bg-racing-gray">Categories</a>
+            <a href="offroad.html" class="block py-3 px-6 hover:bg-racing-gray text-racing-orange">Off-Road</a>
+            <a href="monster.html" class="block py-3 px-6 hover:bg-racing-gray">Monster Trucks</a>
+            <a href="premium.html" class="block py-3 px-6 hover:bg-racing-gray">Premium</a>
+            <a href="about.html" class="block py-3 px-6 hover:bg-racing-gray">About</a>
+            <a href="contact.html" class="block py-3 px-6 hover:bg-racing-gray">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="pt-32 pb-12 bg-gradient-to-b from-racing-black to-racing-dark px-6 text-center">
+        <h1 class="text-5xl md:text-6xl font-display text-white mb-4 animate-fade-in">OFF-ROAD <span
+                class="text-racing-orange">COLLECTION</span></h1>
+        <p class="text-gray-400 mb-8">Dirt, mud, and rocks are no match for these machines.</p>
+
+        <!-- Filters -->
+        <div class="flex justify-center flex-wrap gap-4 animate-fade-in" style="animation-delay: 0.2s;">
+            <button
+                class="filter-btn px-6 py-2 rounded-full border border-gray-700 bg-racing-orange text-white hover:bg-racing-orange transition-all font-medium"
+                data-filter="all">All</button>
+            <button
+                class="filter-btn px-6 py-2 rounded-full border border-gray-700 bg-gray-800 text-gray-300 hover:bg-racing-orange hover:text-white transition-all font-medium"
+                data-filter="suv">SUV</button>
+            <button
+                class="filter-btn px-6 py-2 rounded-full border border-gray-700 bg-gray-800 text-gray-300 hover:bg-racing-orange hover:text-white transition-all font-medium"
+                data-filter="rally">Rally</button>
+            <button
+                class="filter-btn px-6 py-2 rounded-full border border-gray-700 bg-gray-800 text-gray-300 hover:bg-racing-orange hover:text-white transition-all font-medium"
+                data-filter="baja">Baja</button>
+        </div>
+    </header>
+
+    <!-- Product Grid -->
+    <section class="py-12 bg-racing-dark px-6">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                <!-- Product 1 -->
+                <div class="product-item bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-racing-orange/30 transition-shadow group animate-fade-in"
+                    data-category="suv">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=400&auto=format&fit=crop"
+                            alt="Car"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <span
+                            class="absolute top-2 right-2 bg-racing-orange text-white text-xs font-bold px-2 py-1 rounded">SUV</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-1">Land Rover Defender</h3>
+                        <p class="text-gray-500 text-sm mb-4">Classic off-road legend.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-racing-orange font-bold text-lg">$3.99</span>
+                            <button
+                                class="add-to-cart-btn bg-white text-racing-black px-4 py-2 rounded-full text-sm font-bold hover:bg-racing-orange hover:text-white transition-colors">ADD</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-item bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-racing-orange/30 transition-shadow group animate-fade-in"
+                    data-category="rally">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="https://images.unsplash.com/photo-1541348263344-e0609e8e0848?q=80&w=400&auto=format&fit=crop"
+                            alt="Car"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <span
+                            class="absolute top-2 right-2 bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded">RALLY</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-1">Subaru WRX STI</h3>
+                        <p class="text-gray-500 text-sm mb-4">Born for the rally stage.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-racing-orange font-bold text-lg">$4.50</span>
+                            <button
+                                class="add-to-cart-btn bg-white text-racing-black px-4 py-2 rounded-full text-sm font-bold hover:bg-racing-orange hover:text-white transition-colors">ADD</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-item bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-racing-orange/30 transition-shadow group animate-fade-in"
+                    data-category="baja">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=400&auto=format&fit=crop"
+                            alt="Car"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <span
+                            class="absolute top-2 right-2 bg-yellow-600 text-white text-xs font-bold px-2 py-1 rounded">BAJA</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-1">Dune Crusher</h3>
+                        <p class="text-gray-500 text-sm mb-4">Sand dune dominator.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-racing-orange font-bold text-lg">$2.99</span>
+                            <button
+                                class="add-to-cart-btn bg-white text-racing-black px-4 py-2 rounded-full text-sm font-bold hover:bg-racing-orange hover:text-white transition-colors">ADD</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-item bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-racing-orange/30 transition-shadow group animate-fade-in"
+                    data-category="suv">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=400&auto=format&fit=crop"
+                            alt="Car"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <span
+                            class="absolute top-2 right-2 bg-racing-orange text-white text-xs font-bold px-2 py-1 rounded">SUV</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-1">Ford Bronco</h3>
+                        <p class="text-gray-500 text-sm mb-4">Rugged modern classic.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-racing-orange font-bold text-lg">$3.99</span>
+                            <button
+                                class="add-to-cart-btn bg-white text-racing-black px-4 py-2 rounded-full text-sm font-bold hover:bg-racing-orange hover:text-white transition-colors">ADD</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-item bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-racing-orange/30 transition-shadow group animate-fade-in"
+                    data-category="rally">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="https://images.unsplash.com/photo-1541348263344-e0609e8e0848?q=80&w=400&auto=format&fit=crop"
+                            alt="Car"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <span
+                            class="absolute top-2 right-2 bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded">RALLY</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-1">Lancia Stratos</h3>
+                        <p class="text-gray-500 text-sm mb-4">Vintage rally king.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-racing-orange font-bold text-lg">$5.99</span>
+                            <button
+                                class="add-to-cart-btn bg-white text-racing-black px-4 py-2 rounded-full text-sm font-bold hover:bg-racing-orange hover:text-white transition-colors">ADD</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-item bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-racing-orange/30 transition-shadow group animate-fade-in"
+                    data-category="baja">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=400&auto=format&fit=crop"
+                            alt="Car"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <span
+                            class="absolute top-2 right-2 bg-yellow-600 text-white text-xs font-bold px-2 py-1 rounded">BAJA</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-1">Baja Bone Shaker</h3>
+                        <p class="text-gray-500 text-sm mb-4">Modified for the desert.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-racing-orange font-bold text-lg">$2.99</span>
+                            <button
+                                class="add-to-cart-btn bg-white text-racing-black px-4 py-2 rounded-full text-sm font-bold hover:bg-racing-orange hover:text-white transition-colors">ADD</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="product-item bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-racing-orange/30 transition-shadow group animate-fade-in"
+                    data-category="suv">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=400&auto=format&fit=crop"
+                            alt="Car"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <span
+                            class="absolute top-2 right-2 bg-racing-orange text-white text-xs font-bold px-2 py-1 rounded">SUV</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-1">Toyota Land Cruiser</h3>
+                        <p class="text-gray-500 text-sm mb-4">Unstoppable force.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-racing-orange font-bold text-lg">$3.99</span>
+                            <button
+                                class="add-to-cart-btn bg-white text-racing-black px-4 py-2 rounded-full text-sm font-bold hover:bg-racing-orange hover:text-white transition-colors">ADD</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="product-item bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-racing-orange/30 transition-shadow group animate-fade-in"
+                    data-category="rally">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="https://images.unsplash.com/photo-1541348263344-e0609e8e0848?q=80&w=400&auto=format&fit=crop"
+                            alt="Car"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <span
+                            class="absolute top-2 right-2 bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded">RALLY</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-1">Ford Audi Quattro</h3>
+                        <p class="text-gray-500 text-sm mb-4">Group B Monster.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-racing-orange font-bold text-lg">$6.99</span>
+                            <button
+                                class="add-to-cart-btn bg-white text-racing-black px-4 py-2 rounded-full text-sm font-bold hover:bg-racing-orange hover:text-white transition-colors">ADD</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-gray-900 py-12 mt-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-500">&copy; 2024. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

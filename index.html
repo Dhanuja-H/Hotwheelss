@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hot Wheels Collection - Ultimate Die-Cast Garage</title>
+    <meta name="description" content="Explore the ultimate Hot Wheels collection featuring Off-Road, Monster Trucks, and Premium series.">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        racing: {
+                            red: '#D91E18',
+                            orange: '#F96900',
+                            black: '#111111',
+                            dark: '#0a0a0a',
+                            gray: '#1f1f1f'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Roboto', 'sans-serif'],
+                        display: ['Racing Sans One', 'cursive']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-racing-dark text-white font-sans antialiased">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300 py-4 bg-racing-black/90 backdrop-blur-md border-b border-white/10">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-2 group">
+                <i class="fa-solid fa-fire text-racing-orange text-3xl group-hover:scale-110 transition-transform"></i>
+                <span class="font-display text-2xl tracking-wider text-white">HOT <span class="text-racing-orange">WHEELS</span></span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html" class="text-white hover:text-racing-orange font-medium transition-colors">Home</a>
+                <a href="categories.html" class="text-gray-300 hover:text-racing-orange font-medium transition-colors">Categories</a>
+                <a href="offroad.html" class="text-gray-300 hover:text-racing-orange font-medium transition-colors">Off-Road</a>
+                <a href="monster.html" class="text-gray-300 hover:text-racing-orange font-medium transition-colors">Monster</a>
+                <a href="premium.html" class="text-gray-300 hover:text-racing-orange font-medium transition-colors">Premium</a>
+                <a href="about.html" class="text-gray-300 hover:text-racing-orange font-medium transition-colors">About</a>
+                <a href="contact.html" class="text-gray-300 hover:text-racing-orange font-medium transition-colors">Contact</a>
+            </div>
+
+            <!-- Cart & Mobile Menu Button -->
+            <div class="flex items-center gap-6">
+                <div class="relative cursor-pointer group">
+                    <i class="fa-solid fa-cart-shopping text-xl text-white group-hover:text-racing-orange transition-colors"></i>
+                    <span id="cart-count" class="absolute -top-2 -right-3 bg-racing-red text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">0</span>
+                </div>
+                <!-- Hamburger -->
+                <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-racing-black border-t border-gray-800">
+            <a href="index.html" class="block py-3 px-6 hover:bg-racing-gray">Home</a>
+            <a href="categories.html" class="block py-3 px-6 hover:bg-racing-gray">Categories</a>
+            <a href="offroad.html" class="block py-3 px-6 hover:bg-racing-gray">Off-Road</a>
+            <a href="monster.html" class="block py-3 px-6 hover:bg-racing-gray">Monster Trucks</a>
+            <a href="premium.html" class="block py-3 px-6 hover:bg-racing-gray">Premium</a>
+            <a href="about.html" class="block py-3 px-6 hover:bg-racing-gray">About</a>
+            <a href="contact.html" class="block py-3 px-6 hover:bg-racing-gray">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1541348263344-e0609e8e0848?q=80&w=1920&auto=format&fit=crop" alt="Racing Car" class="w-full h-full object-cover opacity-60">
+            <div class="absolute inset-0 bg-gradient-to-b from-racing-black/30 via-racing-black/50 to-racing-dark"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4 animate-fade-in">
+            <h1 class="font-display text-5xl md:text-8xl mb-4 bg-clip-text text-transparent bg-gradient-to-r from-racing-orange to-racing-red drop-shadow-lg">
+                SPEED. POWER. <br class="hidden md:block"> PERFORMANCE.
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto mb-8 font-light">
+                Discover the ultimate collection of Hot Wheels. Unleash the beast within.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="categories.html" class="bg-racing-orange text-white px-8 py-3 rounded-full font-bold text-lg hover:bg-racing-red transition-all transform hover:scale-105 shadow-lg shadow-racing-orange/50">
+                    Explore Collection
+                </a>
+                <a href="#featured" class="border-2 border-white text-white px-8 py-3 rounded-full font-bold text-lg hover:bg-white hover:text-racing-black transition-all transform hover:scale-105">
+                    View Featured
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Featured Categories -->
+    <section id="featured" class="py-20 bg-racing-dark relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-display text-white mb-4"><span class="text-racing-orange">FEATURED</span> SERIES</h2>
+                <div class="h-1 w-24 bg-racing-red mx-auto rounded"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-xl cursor-pointer reveal-on-scroll transform transition-all hover:-translate-y-2">
+                    <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=800&auto=format&fit=crop" alt="Off-Road" class="w-full h-96 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full">
+                        <h3 class="text-3xl font-display text-white mb-2">OFF-ROAD</h3>
+                        <p class="text-gray-300 mb-4">Conquer any terrain with these beasts.</p>
+                        <a href="offroad.html" class="inline-block text-racing-orange font-bold uppercase tracking-wider hover:text-white transition-colors">View Collection <i class="fa-solid fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-xl cursor-pointer reveal-on-scroll transform transition-all hover:-translate-y-2" style="animation-delay: 0.2s;">
+                    <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=800&auto=format&fit=crop" alt="Monster Trucks" class="w-full h-96 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full">
+                        <h3 class="text-3xl font-display text-white mb-2">MONSTER TRUCKS</h3>
+                        <p class="text-gray-300 mb-4">Big wheels, big attitude.</p>
+                        <a href="monster.html" class="inline-block text-racing-orange font-bold uppercase tracking-wider hover:text-white transition-colors">View Collection <i class="fa-solid fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-xl cursor-pointer reveal-on-scroll transform transition-all hover:-translate-y-2" style="animation-delay: 0.4s;">
+                    <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?q=80&w=800&auto=format&fit=crop" alt="Premium" class="w-full h-96 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full">
+                        <h3 class="text-3xl font-display text-white mb-2">PREMIUM</h3>
+                        <p class="text-gray-300 mb-4">For the serious collector.</p>
+                        <a href="premium.html" class="inline-block text-racing-orange font-bold uppercase tracking-wider hover:text-white transition-colors">View Collection <i class="fa-solid fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-gray-900 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+                <div>
+                    <div class="flex items-center justify-center md:justify-start gap-2 mb-4">
+                        <i class="fa-solid fa-fire text-racing-orange text-2xl"></i>
+                        <span class="font-display text-2xl tracking-wider text-white">HOT <span class="text-racing-orange">WHEELS</span></span>
+                    </div>
+                    <p class="text-gray-400">The ultimate destination for die-cast collectors. From off-road beasts to premium supercars, we have it all.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4 uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="index.html" class="hover:text-racing-orange transition-colors">Home</a></li>
+                        <li><a href="categories.html" class="hover:text-racing-orange transition-colors">Categories</a></li>
+                        <li><a href="about.html" class="hover:text-racing-orange transition-colors">About</a></li>
+                        <li><a href="contact.html" class="hover:text-racing-orange transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4 uppercase tracking-wider">Connect</h4>
+                    <div class="flex justify-center md:justify-start space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-racing-orange transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-racing-orange transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-racing-orange transition-colors"><i class="fa-brands fa-facebook"></i></a>
+                    </div>
+                    <p class="mt-4 text-gray-500 text-sm">&copy; 2024 Hot Wheels Collection. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

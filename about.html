@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Hot Wheels Collection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        racing: {
+                            red: '#D91E18',
+                            orange: '#F96900',
+                            black: '#111111',
+                            dark: '#0a0a0a',
+                            gray: '#1f1f1f'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Roboto', 'sans-serif'],
+                        display: ['Racing Sans One', 'cursive']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="bg-racing-dark text-white font-sans antialiased">
+    <!-- Navbar -->
+    <nav
+        class="fixed w-full z-50 transition-all duration-300 py-4 bg-racing-black/90 backdrop-blur-md border-b border-white/10">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <i class="fa-solid fa-fire text-racing-orange text-3xl group-hover:scale-110 transition-transform"></i>
+                <span class="font-display text-2xl tracking-wider text-white">HOT <span
+                        class="text-racing-orange">WHEELS</span></span>
+            </a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html"
+                    class="text-gray-300 hover:text-racing-orange font-medium transition-colors">Home</a>
+                <a href="categories.html"
+                    class="text-gray-300 hover:text-racing-orange font-medium transition-colors">Categories</a>
+                <a href="offroad.html"
+                    class="text-gray-300 hover:text-racing-orange font-medium transition-colors">Off-Road</a>
+                <a href="monster.html"
+                    class="text-gray-300 hover:text-racing-orange font-medium transition-colors">Monster</a>
+                <a href="premium.html"
+                    class="text-gray-300 hover:text-racing-orange font-medium transition-colors">Premium</a>
+                <a href="about.html" class="text-racing-orange font-medium transition-colors">About</a>
+                <a href="contact.html"
+                    class="text-gray-300 hover:text-racing-orange font-medium transition-colors">Contact</a>
+            </div>
+            <div class="flex items-center gap-6">
+                <div class="relative cursor-pointer group">
+                    <i
+                        class="fa-solid fa-cart-shopping text-xl text-white group-hover:text-racing-orange transition-colors"></i>
+                    <span id="cart-count"
+                        class="absolute -top-2 -right-3 bg-racing-red text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">0</span>
+                </div>
+                <!-- Hamburger -->
+                <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-racing-black border-t border-gray-800">
+            <a href="index.html" class="block py-3 px-6 hover:bg-racing-gray">Home</a>
+            <a href="categories.html" class="block py-3 px-6 hover:bg-racing-gray">Categories</a>
+            <a href="offroad.html" class="block py-3 px-6 hover:bg-racing-gray">Off-Road</a>
+            <a href="monster.html" class="block py-3 px-6 hover:bg-racing-gray">Monster Trucks</a>
+            <a href="premium.html" class="block py-3 px-6 hover:bg-racing-gray">Premium</a>
+            <a href="about.html" class="block py-3 px-6 hover:bg-racing-gray text-racing-orange">About</a>
+            <a href="contact.html" class="block py-3 px-6 hover:bg-racing-gray">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="pt-32 pb-12 bg-gradient-to-b from-racing-black to-racing-dark px-6 text-center">
+        <h1 class="text-5xl md:text-6xl font-display text-white mb-4 animate-fade-in">OUR <span
+                class="text-racing-orange">LEGACY</span></h1>
+        <div class="h-1 w-24 bg-racing-red mx-auto rounded"></div>
+    </header>
+
+    <!-- About Section -->
+    <section class="py-12 px-6">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+
+                <div class="w-full md:w-1/2 reveal-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1594787318286-3d835c1d207f?q=80&w=800&auto=format&fit=crop"
+                        alt="Hot Wheels Collection"
+                        class="rounded-xl shadow-2xl skew-y-2 hover:skew-y-0 transition-transform duration-500">
+                </div>
+
+                <div class="w-full md:w-1/2 reveal-on-scroll delay-100">
+                    <h2 class="text-4xl font-display text-white mb-6">FUELING PASSION SINCE 1968</h2>
+                    <p class="text-gray-400 mb-6 text-lg leading-relaxed">
+                        For over 50 years, Hot Wheels has been pushing the limits of performance and design. What
+                        started as "Sweet 16" die-cast cars has evolved into a global lifestyle brand. We are dedicated
+                        to the challenger spirit – the drive to try, to fail, and to try again until you succeed.
+                    </p>
+                    <p class="text-gray-400 mb-6 text-lg leading-relaxed">
+                        Our mission at Hot Wheels Collection is to curate the finest selection of die-cast models for
+                        enthusiasts of all ages. From the rugged Off-Roaders to the exclusive Premium series, we bring
+                        the thrill of the track directly to your shelf.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mt-8">
+                        <div class="bg-gray-800 p-4 rounded-lg text-center border-l-4 border-racing-orange">
+                            <span class="block text-3xl font-bold text-white mb-1">50+</span>
+                            <span class="text-gray-400 text-sm">Years of Speed</span>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded-lg text-center border-l-4 border-racing-red">
+                            <span class="block text-3xl font-bold text-white mb-1">10k+</span>
+                            <span class="text-gray-400 text-sm">Unique Models</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Team / History Section -->
+    <section class="py-20 bg-gray-900 px-6 mt-12">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-display text-white mb-12">THE EVOLUTION</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div
+                    class="bg-racing-black p-8 rounded-xl shadow-lg reveal-on-scroll hover:bg-gray-800 transition-colors">
+                    <div
+                        class="w-16 h-16 bg-racing-orange rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+                        68</div>
+                    <h3 class="text-xl font-bold mb-4">The Beginning</h3>
+                    <p class="text-gray-400">Elliot Handler challenges his design team to create a toy car that looks
+                        cooler and performs better than anything on the market.</p>
+                </div>
+                <div
+                    class="bg-racing-black p-8 rounded-xl shadow-lg reveal-on-scroll hover:bg-gray-800 transition-colors delay-100">
+                    <div
+                        class="w-16 h-16 bg-racing-red rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+                        95</div>
+                    <h3 class="text-xl font-bold mb-4">Treasure Hunts</h3>
+                    <p class="text-gray-400">Hot Wheels introduces limited production cars with special paint and
+                        wheels, sparking a global treasure hunt mania.</p>
+                </div>
+                <div
+                    class="bg-racing-black p-8 rounded-xl shadow-lg reveal-on-scroll hover:bg-gray-800 transition-colors delay-200">
+                    <div
+                        class="w-16 h-16 bg-racing-orange rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+                        24</div>
+                    <h3 class="text-xl font-bold mb-4">Digital Era</h3>
+                    <p class="text-gray-400">Merging physical play with digital gaming, NFT garages, and global
+                        e-commerce accessibility.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-gray-900 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-500">&copy; 2024. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
